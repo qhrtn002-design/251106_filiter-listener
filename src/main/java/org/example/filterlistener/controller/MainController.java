@@ -6,10 +6,10 @@ import jakarta.servlet.http.*;
 
 import java.io.IOException;
 
-@WebServlet("/count1")
-public class CounterController extends HttpServlet {
+@WebServlet("/")
+public class MainController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/counter.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 }
