@@ -10,12 +10,14 @@ import java.io.IOException;
 public class CounterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("-> CounterController 시작");
         // 접속했을 때 세션과 쿠키에 카운트를 늘려주는...
         // 세션으로 카운트를 늘리기
         HttpSession session = req.getSession(); // true -> 없으면 새로 만들겠다
         countBySession(session);
         countByCookie(req, resp);
         req.getRequestDispatcher("/WEB-INF/views/counter.jsp").forward(req, resp);
+        System.out.println("-> CounterController 종료");
     }
 
     private void countBySession(HttpSession session) {
